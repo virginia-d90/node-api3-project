@@ -57,7 +57,7 @@ router.get('/:id/posts', validateUserId, (req, res) => {
 });
 
 router.delete('/:id', validateUserId, (req, res) => {
-  router.delete(req.params.id)
+  Users.remove(req.params.id)
     .then(user => {
       res.status(204).json(user)
     })
